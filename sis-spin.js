@@ -7,7 +7,7 @@
     const questions = [
       { q: 'What is a period?', a: ['A little blood and tissue leaving the uterus', 'A visit from a moon penguin', 'A new dance move'], correct: 0 },
       { q: 'Are everyone’s cycles exactly the same?', a: ['Yes, like matching socks', 'No, cycles can vary from person to person', 'Only on Tuesdays'], correct: 1 },
-      { q: 'What can help catch period flow?', a: ['A tiny umbrella', 'A pad or period underwear', 'A slice of pizza'], correct: 1 },
+      { q: 'What can you do if your flow is heavier than usual?', a: ['A tiny umbrella', 'Layer your pads for extra coverage', 'A slice of pizza'], correct: 1 },
       { q: 'Can you move and play while on your period?', a: ['Yes, if you feel up to it', 'Only while wearing a cape', 'No, the moon says no'], correct: 0 },
       { q: 'What might feel soothing for period cramps?', a: ['A warm heating pad used safely', 'A frozen shoe', 'A tap-dancing broccoli'], correct: 0 },
       { q: 'Who can you talk to about a period question?', a: ['A trusted adult or health professional', 'Only a secret squirrel', 'Nobody, ever'], correct: 0 },
@@ -68,7 +68,7 @@
     };
     go.addEventListener('click', () => {
       refreshAvatar(); go.disabled = true; answers.replaceChildren(); question.textContent = 'Spinning…'; message.textContent = '';
-      const idx = Math.floor(Math.random() * questions.length), item = questions[idx];
+      const idx = (() => { const deckKey='sisSpinQuestionDeckV1', lastKey='sisSpinLastQuestionV1'; let deck=[]; try { deck=JSON.parse(localStorage.getItem(deckKey)||'[]'); } catch(_) {} if(!Array.isArray(deck)) deck=[]; deck=deck.filter(i=>Number.isInteger(i)&&i>=0&&i<questions.length); if(!deck.length){ deck=questions.map((_,i)=>i); for(let i=deck.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [deck[i],deck[j]]=[deck[j],deck[i]]; } let last=null; try { const saved=localStorage.getItem(lastKey); if(saved!==null) last=Number(saved); } catch(_) {} if(deck.length>1&&deck[0]===last){ const j=1+Math.floor(Math.random()*(deck.length-1)); [deck[0],deck[j]]=[deck[j],deck[0]]; } } const chosen=deck.shift(); try { localStorage.setItem(deckKey,JSON.stringify(deck)); localStorage.setItem(lastKey,String(chosen)); } catch(_) {} return chosen; })(), item = questions[idx];
       const target = (360 - (idx * 45 + 22.5)) % 360;
       rotation += 1800 + ((target - (rotation % 360) + 360) % 360);
       wheel.style.transform = `rotate(${rotation}deg)`;
