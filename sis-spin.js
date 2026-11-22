@@ -56,7 +56,7 @@
     @keyframes sis-confetti{to{transform:translateY(260px) rotate(240deg);opacity:0}}
     #sisSpinGame .sticker-pop{position:absolute;left:50%;top:46%;z-index:9;transform:translate(-50%,-50%);padding:10px 16px;border-radius:18px;background:#fff;color:#81355d;border:2px solid #f2c2d7;box-shadow:0 5px 18px rgba(92,38,70,.24);font-weight:900;animation:sis-pop 1.7s ease forwards;white-space:nowrap}
     @keyframes sis-pop{0%{opacity:0;scale:.65}15%,75%{opacity:1;scale:1.05}100%{opacity:0;scale:.95}}
-    @media(prefers-reduced-motion:reduce){#sisSpinGame .wheel{transition:none}#sisSpinGame .spin-wiggle,#sisSpinGame .confetti,#sisSpinGame .sticker-pop{animation:none}}
+    @media(max-width:600px){#sisSpinGame .spin-stage{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;gap:clamp(8px,3vw,14px);width:100%;max-width:390px;margin:0 auto}#sisSpinGame .spin-avatar{width:100%;min-width:0;min-height:0}#sisSpinGame .spin-avatar svg{width:100%!important;height:auto!important;max-width:112px;max-height:180px}#sisSpinGame .wheel-wrap{width:min(100%,224px);height:auto;aspect-ratio:1;margin:12px auto 18px}} @media(prefers-reduced-motion:reduce){#sisSpinGame .wheel{transition:none}#sisSpinGame .spin-wiggle,#sisSpinGame .confetti,#sisSpinGame .sticker-pop{animation:none}}
   `;
   document.head.appendChild(style);
 
