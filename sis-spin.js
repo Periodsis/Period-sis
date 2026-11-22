@@ -169,7 +169,7 @@
             try{localStorage.setItem(lifetimeKey,String(lifetimeCount));localStorage.setItem(weeklyKey,JSON.stringify({week:weekStamp,count:weeklyCount}));}catch(_){}
           }
           try{localStorage.setItem(dailyKey,JSON.stringify({date:dayStamp,count:dailyCount,awarded:dailyAwarded}));}catch(_){}
-          refreshProgress();refreshStickers();confetti();
+          refreshProgress();refreshStickers();if(earnsSticker)confetti();
           message.textContent=earnsSticker?`That's 10 today! New sticker earned. Answer: ${item.a[item.correct]}`:`You got it! Answer: ${item.a[item.correct]}`;
           if(earnsSticker)showSticker();
           go.disabled=false;go.textContent='Spin again!';
