@@ -40,7 +40,7 @@
     #sisSpinGame .wheel::before{content:'';position:absolute;inset:7px;border:2px solid rgba(255,255,255,.83);border-radius:50%;box-shadow:inset 0 0 0 1px rgba(123,58,91,.16);pointer-events:none;z-index:1}
     #sisSpinGame .wheel::after{content:'';position:absolute;left:9%;top:7%;width:43%;height:23%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,0));transform:rotate(-27deg);filter:blur(2px);pointer-events:none;z-index:1}
     #sisSpinGame .wheel span{position:absolute;left:50%;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid rgba(255,255,255,.9);border-radius:50%;background:rgba(255,255,255,.78);box-shadow:0 1px 4px rgba(79,39,64,.2);font-weight:900;font-size:10px;line-height:1;color:#673b58}
-    #sisSpinGame .wheel-hub{position:absolute;z-index:4;left:50%;top:50%;width:48px;height:48px;display:grid;place-items:center;transform:translate(-50%,-50%);border:4px solid #fff7fb;border-radius:50%;background:linear-gradient(145deg,#fffafd 0%,#f8c5dc 58%,#eea6c5 100%);box-shadow:0 3px 8px rgba(63,28,55,.28),inset 0 2px 4px rgba(255,255,255,.95)}
+    #sisSpinGame .wheel-hub{position:absolute;z-index:4;left:50%;top:50%;width:48px;height:48px;display:grid;place-items:center;transform:translate(-50%,-50%);border:0;border-radius:50%;background:#f4b1cf;box-shadow:0 3px 8px rgba(63,28,55,.28)}
     #sisSpinGame .wheel-pointer{position:absolute;left:50%;top:-7px;transform:translateX(-50%);z-index:6;width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:31px solid #b84f82;filter:drop-shadow(0 3px 2px rgba(72,35,59,.38))}
     #sisSpinGame button{font:inherit;cursor:pointer;border:0;border-radius:13px;padding:11px 15px;background:#a84f7c;color:#fff;font-weight:700;box-shadow:0 3px 0 #783856;transition:transform .12s ease,background .12s ease}
     #sisSpinGame button:hover{background:#81355d;transform:translateY(-1px)} #sisSpinGame button:focus-visible{outline:3px solid #f1a8ca;outline-offset:3px} #sisSpinGame button:disabled{opacity:.72;cursor:default;transform:none}
@@ -133,13 +133,13 @@
 
   const palette = ['#f6c6dc','#f6d8a9','#bfe4d2','#b9d7f5','#e0c5ef','#f8d1c5','#c5e2e8','#f4c5c9','#f4d9e7','#d3e9d8'];
   const slice = 360 / 10;
-  const stops = Array.from({length:10},(_,i) => `${palette[i%palette.length]} ${i*slice+.8}deg ${(i+1)*slice-.8}deg`).join(',');
+  const stops = ['#000 0deg 0.8deg',...Array.from({length:10},(_,i) => `${palette[i%palette.length]} ${i*slice+0.8}deg ${(i+1)*slice-0.8}deg,#000 ${(i+1)*slice-0.8}deg ${(i+1)*slice+0.8}deg`)].join(',');
   wheel.style.background = `radial-gradient(circle at 30% 23%,rgba(255,255,255,.48),transparent 48%),conic-gradient(from -90deg,${stops})`;
   for (let i=0;i<10;i++) {
     const label = document.createElement('span');
     const angle = i*slice+slice/2;
     label.textContent = String(i+1);
-    label.style.transform = `translate(-50%,-50%) rotate(${angle}deg) translateY(-68px) rotate(${-angle}deg)`;
+    label.style.transform = `translate(-50%,-50%) rotate(${angle}deg) translateY(-64px) rotate(${-angle}deg)`;
     wheel.appendChild(label);
   }
 
