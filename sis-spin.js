@@ -139,7 +139,7 @@
     const label = document.createElement('span');
     const angle = i*slice+slice/2;
     label.textContent = String(i+1);
-    label.style.transform = `translate(-50%,-50%) rotate(${angle}deg) translateY(-82px) rotate(${-angle}deg)`;
+    label.style.transform = `translate(-50%,-50%) rotate(${angle}deg) translateY(-68px) rotate(${-angle}deg)`;
     wheel.appendChild(label);
   }
 
