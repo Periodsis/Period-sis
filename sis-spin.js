@@ -132,7 +132,7 @@
   const saveRotation=()=>{try{localStorage.setItem(rotationKey,JSON.stringify({week:weekStamp,set:weekSet,deck:weekDeck,reserve}));}catch(_){}};
 
   const palette = ['#f6c6dc','#f6d8a9','#bfe4d2','#b9d7f5','#e0c5ef','#f8d1c5','#c5e2e8','#f4c5c9','#f4d9e7','#d3e9d8'];
-  const slice = 360 / 10; const gradientStartAngle = -90; const labelRadius = (wheel.clientWidth/2 + game.querySelector('.wheel-hub').offsetWidth/2)/2;
+  const slice = 360 / 10; const gradientStartAngle = -90; const labelRadius = 64;
   const stops = ['#000 0deg 0.8deg',...Array.from({length:10},(_,i) => `${palette[i%palette.length]} ${i*slice+0.8}deg ${(i+1)*slice-0.8}deg,#000 ${(i+1)*slice-0.8}deg ${(i+1)*slice+0.8}deg`)].join(',');
   wheel.style.background = `radial-gradient(circle at 30% 23%,rgba(255,255,255,.48),transparent 48%),conic-gradient(from -90deg,${stops})`;
   for (let i=0;i<10;i++) {
