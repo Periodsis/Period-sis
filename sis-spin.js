@@ -3,7 +3,7 @@
   if (!box || document.getElementById('sisSpinGame')) return;
 
   const questions = [
-    { q: 'What is a period?', a: ['A little blood and tissue leaving the uterus', 'A visit from a moon penguin', 'A new dance move'], correct: 0 },
+    { q: 'What is a period?', a: ['A visit from a moon penguin', 'A little blood and tissue leaving the uterus', 'A new dance move'], correct: 1 },
     { q: 'Are everyone’s cycles exactly the same?', a: ['Yes, like matching socks', 'No, cycles can vary from person to person', 'Only on Tuesdays'], correct: 1 },
     { q: 'What can you do if your flow is heavier than usual?', a: ['A tiny umbrella', 'Layer your pads for extra coverage', 'A slice of pizza'], correct: 1 },
     { q: 'Can you move and play while on your period?', a: ['Yes, if you feel up to it', 'Only while wearing a cape', 'No, the moon says no'], correct: 0 },
@@ -11,10 +11,10 @@
     { q: 'Who can you talk to about a period question?', a: ['A trusted adult or health professional', 'Only a secret squirrel', 'Nobody, ever'], correct: 0 },
     { q: 'When do people start their first period?', a: ['Everyone starts on the same birthday', 'It varies from person to person', 'Whenever a unicorn sneezes'], correct: 1 },
     { q: 'What should you do if period pain feels severe or worrying?', a: ['Ask a trusted adult or health professional for help', 'Ask your socks for advice', 'Challenge a potato to a race'], correct: 0 },
-    { q: 'How often should you change a sanitary pad?', a: ['Generally every 4-6 hours, or sooner if it becomes full.', 'Once a week', 'Only when you remember'], correct: 0 },
-    { q: 'Periods stop when you sleep.', a: ['True', 'False! Your period continues while you sleep.'], correct: 1 },
-    { q: 'Do you have to tell your friends when you get your period?', a: ["No. You don't have to. Your period is personal, and you decide who you share that information with."], correct: 0 },
-    { q: 'What should you do if your period starts at school?', a: ["Don't panic. Visit the school nurse or ask a trusted adult for a pad and help if you are unprepared."], correct: 0 },
+    { q: 'How often should you change a sanitary pad?', a: ['Once a week', 'Generally every 4-6 hours, or sooner if it becomes full.', 'Only when you remember'], correct: 1 },
+    { q: 'Periods stop when you sleep.', a: ['True', 'False! Your period continues while you sleep.', 'Only if you stay awake all night'], correct: 1 },
+    { q: 'Do you have to tell your friends when you get your period?', a: ["No. You don't have to. Your period is personal, and you decide who you share that information with.", 'Yes, every friend must know right away', 'Only your best friend gets to decide'], correct: 0 },
+    { q: 'What should you do if your period starts at school?', a: ["Don't panic. Visit the school nurse or ask a trusted adult for a pad and help if you are unprepared.", 'Hide in the bathroom all day', 'Wait quietly and hope someone notices'], correct: 0 },
     { q: 'Is it okay to feel scared when you get your first period?', a: ["Absolutely! It's a new experience, and it's okay to have questions.", 'Only if the moon is full', 'Ask a nervous potato'], correct: 0 },
     { q: 'What if you get your period while wearing white pants?', a: ['Take a breath, tie a jacket around your waist if needed, and find a trusted person who can help.', 'Turn your pants into a flag', 'Hide in a cloud of glitter'], correct: 0 },
     { q: 'Should you feel embarrassed about buying period products?', a: ['Never. Taking care of yourself is nothing to hide.', 'Hide behind a shopping cart', 'Ask a dragon to shop'], correct: 0 },
@@ -40,7 +40,7 @@
     #sisSpinGame .wheel::before{content:'';position:absolute;inset:7px;border:2px solid rgba(255,255,255,.83);border-radius:50%;box-shadow:inset 0 0 0 1px rgba(123,58,91,.16);pointer-events:none;z-index:1}
     #sisSpinGame .wheel::after{content:'';position:absolute;left:9%;top:7%;width:43%;height:23%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,0));transform:rotate(-27deg);filter:blur(2px);pointer-events:none;z-index:1}
     #sisSpinGame .wheel span{position:absolute;left:50%;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid rgba(255,255,255,.9);border-radius:50%;background:rgba(255,255,255,.78);box-shadow:0 1px 4px rgba(79,39,64,.2);font-weight:900;font-size:10px;line-height:1;color:#673b58}
-    #sisSpinGame .wheel-hub{position:absolute;z-index:4;left:50%;top:50%;width:48px;height:48px;display:grid;place-items:center;transform:translate(-50%,-50%);border:4px solid #fff7fb;border-radius:50%;background:radial-gradient(circle at 32% 26%,#fff,#f8c5dc 43%,#c65b94 75%,#8e3f6b);box-shadow:0 3px 8px rgba(63,28,55,.38),inset 0 2px 4px rgba(255,255,255,.9);color:#fff;font-size:22px;text-shadow:0 1px 2px #7c355c}
+    #sisSpinGame .wheel-hub{position:absolute;z-index:4;left:50%;top:50%;width:48px;height:48px;display:grid;place-items:center;transform:translate(-50%,-50%);border:4px solid #fff7fb;border-radius:50%;background:linear-gradient(145deg,#fffafd 0%,#f8c5dc 58%,#eea6c5 100%);box-shadow:0 3px 8px rgba(63,28,55,.28),inset 0 2px 4px rgba(255,255,255,.95)}
     #sisSpinGame .wheel-pointer{position:absolute;left:50%;top:-7px;transform:translateX(-50%);z-index:6;width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:31px solid #b84f82;filter:drop-shadow(0 3px 2px rgba(72,35,59,.38))}
     #sisSpinGame button{font:inherit;cursor:pointer;border:0;border-radius:13px;padding:11px 15px;background:#a84f7c;color:#fff;font-weight:700;box-shadow:0 3px 0 #783856;transition:transform .12s ease,background .12s ease}
     #sisSpinGame button:hover{background:#81355d;transform:translateY(-1px)} #sisSpinGame button:focus-visible{outline:3px solid #f1a8ca;outline-offset:3px} #sisSpinGame button:disabled{opacity:.72;cursor:default;transform:none}
@@ -56,14 +56,15 @@
     @keyframes sis-confetti{to{transform:translateY(260px) rotate(240deg);opacity:0}}
     #sisSpinGame .sticker-pop{position:absolute;left:50%;top:46%;z-index:9;transform:translate(-50%,-50%);padding:10px 16px;border-radius:18px;background:#fff;color:#81355d;border:2px solid #f2c2d7;box-shadow:0 5px 18px rgba(92,38,70,.24);font-weight:900;animation:sis-pop 1.7s ease forwards;white-space:nowrap}
     @keyframes sis-pop{0%{opacity:0;scale:.65}15%,75%{opacity:1;scale:1.05}100%{opacity:0;scale:.95}}
-    @media(max-width:600px){#sisSpinGame .spin-stage{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;gap:clamp(8px,3vw,14px);width:100%;max-width:390px;margin:0 auto}#sisSpinGame .spin-avatar{width:100%;min-width:0;min-height:0}#sisSpinGame .spin-avatar svg{width:100%!important;height:auto!important;max-width:112px;max-height:180px}#sisSpinGame .wheel-wrap{width:min(100%,224px);height:auto;aspect-ratio:1;margin:12px auto 18px}} @media(prefers-reduced-motion:reduce){#sisSpinGame .wheel{transition:none}#sisSpinGame .spin-wiggle,#sisSpinGame .confetti,#sisSpinGame .sticker-pop{animation:none}}
+    @media(max-width:600px){#sisSpinGame .spin-stage{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;gap:clamp(8px,3vw,14px);width:100%;max-width:390px;margin:0 auto}#sisSpinGame .spin-avatar{width:100%;min-width:0;min-height:0}#sisSpinGame .spin-avatar svg{width:100%!important;height:auto!important;max-width:112px;max-height:180px}#sisSpinGame .wheel-wrap{width:min(100%,224px);height:auto;aspect-ratio:1;margin:12px auto 18px}}
+    @media(prefers-reduced-motion:reduce){#sisSpinGame .wheel{transition:none}#sisSpinGame .spin-wiggle,#sisSpinGame .confetti,#sisSpinGame .sticker-pop{animation:none}}
   `;
   document.head.appendChild(style);
 
   const game = document.createElement('section');
   game.id = 'sisSpinGame';
   game.setAttribute('aria-label','Sis Spin game');
-  game.innerHTML = '<h2>🎡 Sis Spin!</h2><p>Spin with your Sis, answer a question, and collect stickers!</p><div class="spin-stage"><div class="spin-avatar" aria-label="Your Sis"></div><div class="wheel-wrap"><div class="wheel" aria-hidden="true"></div><div class="wheel-hub" aria-hidden="true">✦</div><div class="wheel-pointer" aria-hidden="true"></div></div></div><button class="spin-go" type="button">Spin!</button><p class="spin-question" aria-live="polite">Ready when you are!</p><div class="spin-answers"></div><p class="spin-message" role="status" aria-live="polite"></p><div class="spin-sticker-panel"><p class="spin-progress" role="status" aria-live="polite"></p><p><strong>Sticker collection</strong></p><p class="spin-stickers" aria-live="polite"></p></div>';
+  game.innerHTML = '<h2>🎡 Sis Spin!</h2><p>Spin with your Sis, answer a question, and collect stickers!</p><div class="spin-stage"><div class="spin-avatar" aria-label="Your Sis"></div><div class="wheel-wrap"><div class="wheel" aria-hidden="true"></div><div class="wheel-hub" aria-hidden="true"></div><div class="wheel-pointer" aria-hidden="true"></div></div></div><button class="spin-go" type="button">Spin!</button><p class="spin-question" aria-live="polite">Ready when you are!</p><div class="spin-answers"></div><p class="spin-message" role="status" aria-live="polite"></p><div class="spin-sticker-panel"><p class="spin-progress" role="status" aria-live="polite"></p><p><strong>Sticker collection</strong></p><p class="spin-stickers" aria-live="polite"></p></div>';
   box.appendChild(game);
 
   const wheel = game.querySelector('.wheel');
@@ -77,7 +78,7 @@
   const lifetimeKey = 'periodSisSpinStickersV1';
   const dailyKey = 'periodSisSpinDailyProgressV1';
   const weeklyKey = 'periodSisSpinWeeklyCollectionV1';
-  const deckKey = 'sisSpinQuestionDeckV2';
+  const rotationKey = 'sisSpinWeeklyQuestionRotationV1';
   const lastKey = 'sisSpinLastQuestionV1';
   const now = new Date();
   const dayStamp = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -104,11 +105,37 @@
   };
   refreshAvatar();
 
-  const palette = ['#f6c6dc','#f6d8a9','#bfe4d2','#b9d7f5','#e0c5ef','#f8d1c5','#c5e2e8','#f4c5c9'];
-  const slice = 360 / questions.length;
-  const stops = questions.map((_,i) => `${palette[i%palette.length]} ${i*slice+.8}deg ${(i+1)*slice-.8}deg`).join(',');
+  const shuffle = list => { for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[list[i],list[j]]=[list[j],list[i]];} return list; };
+  const validUnique = (list,max) => Array.isArray(list) ? list.filter((n,i)=>Number.isInteger(n)&&n>=0&&n<max&&list.indexOf(n)===i) : [];
+  const allIndices = questions.map((_,i)=>i);
+  let weekSet=[], weekDeck=[], reserve=[];
+  try {
+    const saved=JSON.parse(localStorage.getItem(rotationKey)||'null');
+    if(saved && saved.week===weekStamp && validUnique(saved.set,questions.length).length===10){
+      weekSet=validUnique(saved.set,questions.length);
+      weekDeck=validUnique(saved.deck,10);
+      reserve=validUnique(saved.reserve,questions.length).filter(i=>!weekSet.includes(i));
+    } else {
+      reserve=saved ? validUnique(saved.reserve,questions.length) : shuffle([...allIndices]);
+      if(reserve.length<10){
+        const avoid=saved ? validUnique(saved.set,questions.length) : [];
+        reserve=reserve.concat(shuffle(allIndices.filter(i=>!reserve.includes(i)&&!avoid.includes(i))));
+      }
+      weekSet=reserve.splice(0,10);
+      weekDeck=shuffle(weekSet.map((_,i)=>i));
+      localStorage.setItem(rotationKey,JSON.stringify({week:weekStamp,set:weekSet,deck:weekDeck,reserve}));
+    }
+  } catch (_) {
+    reserve=shuffle([...allIndices]); weekSet=reserve.splice(0,10); weekDeck=shuffle(weekSet.map((_,i)=>i));
+  }
+  if(weekSet.length!==10){reserve=shuffle([...allIndices]);weekSet=reserve.splice(0,10);weekDeck=shuffle(weekSet.map((_,i)=>i));}
+  const saveRotation=()=>{try{localStorage.setItem(rotationKey,JSON.stringify({week:weekStamp,set:weekSet,deck:weekDeck,reserve}));}catch(_){}};
+
+  const palette = ['#f6c6dc','#f6d8a9','#bfe4d2','#b9d7f5','#e0c5ef','#f8d1c5','#c5e2e8','#f4c5c9','#f4d9e7','#d3e9d8'];
+  const slice = 360 / 10;
+  const stops = Array.from({length:10},(_,i) => `${palette[i%palette.length]} ${i*slice+.8}deg ${(i+1)*slice-.8}deg`).join(',');
   wheel.style.background = `radial-gradient(circle at 30% 23%,rgba(255,255,255,.48),transparent 48%),conic-gradient(from -90deg,${stops})`;
-  for (let i=0;i<questions.length;i++) {
+  for (let i=0;i<10;i++) {
     const label = document.createElement('span');
     const angle = i*slice+slice/2;
     label.textContent = String(i+1);
@@ -131,28 +158,26 @@
   const showSticker = () => {
     const pop = document.createElement('div'); pop.className='sticker-pop'; pop.setAttribute('role','status'); pop.textContent='🌟 New sticker earned!'; game.appendChild(pop); setTimeout(()=>pop.remove(),1800);
   };
-  const shuffle = list => { for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[list[i],list[j]]=[list[j],list[i]];} return list; };
-  const nextIndex = () => {
-    let deck=[]; let last=null;
-    try { deck=JSON.parse(localStorage.getItem(deckKey)||'[]'); last=Number(localStorage.getItem(lastKey)); } catch (_) { deck=[]; last=null; }
-    if (!Array.isArray(deck)) deck=[];
-    deck=deck.filter((n,i)=>Number.isInteger(n)&&n>=0&&n<questions.length&&deck.indexOf(n)===i);
-    if (!deck.length) deck=shuffle(questions.map((_,i)=>i));
-    if (deck.length>1 && deck[0]===last) { const j=1+Math.floor(Math.random()*(deck.length-1)); [deck[0],deck[j]]=[deck[j],deck[0]]; }
-    const chosen=deck.shift();
-    try { localStorage.setItem(deckKey,JSON.stringify(deck)); localStorage.setItem(lastKey,String(chosen)); } catch (_) {}
-    return chosen;
+  const nextQuestion = () => {
+    if(!weekDeck.length) weekDeck=shuffle(weekSet.map((_,i)=>i));
+    let slot=weekDeck.shift();
+    let idx=weekSet[slot];
+    let last=null; try{last=Number(localStorage.getItem(lastKey));}catch(_){}
+    if(weekDeck.length && idx===last){const j=1+Math.floor(Math.random()*(weekDeck.length));[slot,weekDeck[j-1]]=[weekDeck[j-1],slot];idx=weekSet[slot];}
+    saveRotation();
+    try{localStorage.setItem(lastKey,String(idx));}catch(_){}
+    return {slot,idx};
   };
 
   go.addEventListener('click',()=>{
     refreshAvatar(); go.disabled=true; answers.replaceChildren(); message.textContent=''; question.textContent='Spinning…';
-    const idx=nextIndex(); const item=questions[idx];
-    const target=(360-(idx*slice+slice/2)+360)%360;
+    const draw=nextQuestion(); const item=questions[draw.idx];
+    const target=(360-(draw.slot*slice+slice/2)+360)%360;
     rotation += 1800 + ((target-(rotation%360)+360)%360);
     wheel.style.transform=`rotate(${rotation}deg)`;
     const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setTimeout(()=>{
-      question.textContent=`Question ${idx+1} of ${questions.length}: ${item.q}`;
+      question.textContent=`Question ${draw.slot+1} of 10: ${item.q}`;
       item.a.forEach((text,i)=>{
         const button=document.createElement('button'); button.type='button'; button.textContent=text;
         button.addEventListener('click',()=>{
